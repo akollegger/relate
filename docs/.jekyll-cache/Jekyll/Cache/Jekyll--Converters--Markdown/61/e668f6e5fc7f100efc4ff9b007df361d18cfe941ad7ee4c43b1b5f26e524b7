@@ -1,0 +1,21 @@
+I"�<h1 id="neo4j-relate">Neo4j Relate</h1>
+
+<p><em>code + data = purpose</em></p>
+
+<p>Code can’t do anything without data.</p>
+
+<p>Data isn’t anything without code.</p>
+
+<p>Relate adds data to code, enabling purposeful workflows. Relate is a framework of tools,
+services and libraries for working with Neo4j.</p>
+
+<h2 id="related-workflows">Related Workflows</h2>
+
+<h3 id="just-a-neo4j-dbms">Just a Neo4j DBMS</h3>
+
+<p><strong>Goal</strong>: Easily install, upgrade and manage a Neo4j DBMS.</p>
+
+<h1 id="code-as-data">Code <em>as</em> Data</h1>
+
+<p>Yes, there is a <a href="https://en.wikipedia.org/wiki/Code_as_data">duality between code and data</a>.</p>
+:ET
