@@ -1,5 +1,6 @@
-# relate
-Just want to use it? See our [First use guide](./documentation/FIRST_USE_GUIDE.md) instead.
+# Relate Framework
+
+Just want to use it? See our [First use guide](./docs/FIRST_USE_GUIDE.md) instead.
 
 
 ### Installation
@@ -31,7 +32,7 @@ Uses version 4.0.4 or set the `TEST_NEO4J_VERSION` environment variable to whate
 $ npm test
 ```
 
-Check [TESTING.md](./documentation/TESTING.md) for more information.
+Check [TESTING.md](./docs/TESTING.md) for more information.
 
 ### Linting
 
