@@ -3,12 +3,13 @@ title: "Neo4j Relate"
 description: "A framework of tools, services and libraries for working with Neo4j."
 repository: "https://github.com/neo4j-devtools/relate"
 
+permalink: pretty
+
 defaults:  
   - scope:
       path: ""
     values:
       layout: "responsive"
-      permalink: /:path/:basename/
 
 exclude:  
   - "*.config.js"
