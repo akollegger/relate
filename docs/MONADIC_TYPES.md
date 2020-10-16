@@ -1,21 +1,28 @@
+---
+title: Monadic Type System
+---
 # Monadic Type System
+
 We have our own monadic type system which is continuously under development. The aim of this system is to ensure type-safety, reduce complexity of logic and control-flows, improve legibility of code, and improve TypeScripts ability to do type-inference et al.
 
 We use our own code-base as a living example and documentation. Please see the tests in `@relate/types` or the various utils in `@relate/common` for up to date, real-world examples of the type-system in action.
 
 ## ToC
+
 1. [Helpful Resources](#helpful-resources)
 2. [Basic Types](#basic-types)
 2. [Primitive examples](#primitive-examples)
 2. [Advanced examples](#advanced-examples)
 
 ## Helpful Resources
+
 - [Monet.js](https://github.com/monet/monet.js/blob/master/docs/README.md)
 -   [What The Heck Is A Monad](https://khanlou.com/2015/09/what-the-heck-is-a-monad/)
 -   [A Guide to Scala Collections: Exploring Monads in Scala Collections](https://blog.redelastic.com/a-guide-to-scala-collections-exploring-monads-in-scala-collections-ef810ef3aec3)
 -   [Practical introduction to Functional Programming with JS](https://www.codingame.com/playgrounds/2980/practical-introduction-to-functional-programming-with-js/functors-and-monads)
 
 ## Basic types
+
 We currently have the main data types of JS represented
 -   [None (`undefined`)](../packages/types/src/monads/primitive/none.test.ts)
 -   [Nil (`null`)](../packages/types/src/monads/primitive/nil.test.ts)
@@ -26,6 +33,7 @@ We currently have the main data types of JS represented
 -   [Dict (`Object || Map`)](../packages/types/src/monads/primitive/dict.test.ts)
 
 ## Primitive examples
+
 Create a number, divide it, check if it's modulo is 2
 
 ```TypeScript
@@ -38,6 +46,7 @@ const isModulo2: boolean = Num.of(Math.random() * 100)
 ```
 
 Create a list, concat it with another, check if it's length is 2
+
 ```TypeScript
 import {Bool, Num, List} from './dist';
 
@@ -49,7 +58,9 @@ const isLength2: Bool = Bool.from(
 ```
 
 ## Advanced examples
+
 Get the version of a neo4j distribution by checking the `neo4j.jar` version against a regex:
+
 ```TypeScript
 import {InvalidArgumentError} from '@relate/common';
 import {None, List} from '@relate/types';
@@ -81,6 +92,7 @@ export async function getDistributionVersion(dbmsRoot: string): Promise<string> 
 ```
 
 Find distributions that satisfy our semver requirement:
+
 ```TypeScript
 import {Dict, List} from '@relate/types';
 import semver from 'semver';
@@ -128,6 +140,7 @@ export const fetchNeo4jVersions = async (): Promise<List<IDbmsVersion>> => {
 ```
 
 Asyncronously read from several directories, then flatten the result:
+
 ```TypeScript
 import {List, Dict} from '@relate/types';
 import path from 'path';
@@ -144,6 +157,7 @@ async function listInstalledExtensions(): Promise<List<IExtensionMeta>> {
 ```
 
 Parse a file name, extracting a valid semver version and it's "human" name, before converting it to an object
+
 ```TypeScript
 import {List, None, Str} from '@relate/types';
 import semver from 'semver'
@@ -192,6 +206,7 @@ function mapArtifactoryResponse(results: List<any>): List<IExtensionVersion> {
 
 Determine downloadable online versions in order to create suggested action error strings (with a fallback)
 Before
+
 ```TypeScript
 export const downloadNeo4j = async (version: string, neo4jDistributionPath: string): Promise<void> => {
     const onlineVersions = (await fetchNeo4jVersions()).toArray();
@@ -232,6 +247,7 @@ export const downloadNeo4j = async (version: string, neo4jDistributionPath: stri
 ```
 
 After
+
 ```TypeScript
 export const downloadNeo4j = async (version: string, neo4jDistributionPath: string): Promise<void> => {
     const onlineVersions = await fetchNeo4jVersions();

@@ -1,16 +1,19 @@
+---
+title: Testing
+---
 # Testing
 This document contains all instructions for testing.
 
 ## Setup
 
-All tests run against the [e2e fixtures folder](../e2e/relate%20fixtures).
+All tests run against the [e2e fixtures folder]({{site.repository}}/tree/master/e2e/relate%20fixtures).
 
 ### DBMS
 Tests are run concurrently, so never assume an exact amount of DBMSs installed at
 any given point in your tests. You can use `TestDbmss` for installing new DBMSs
 and for cleaning them up after tests are run.
 
-```typescript
+```TypeScript
 import {TestDbmss} from '@relate/common';
 
 // ...

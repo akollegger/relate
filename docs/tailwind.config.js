@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
     future: {
         // removeDeprecatedGapUtilities: true,
@@ -6,9 +8,18 @@ module.exports = {
         // standardFontWeights: true
     },
     purge: [],
+    important: false,
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                "sans": ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+                "mono": ['"Fira Code"', ...defaultTheme.fontFamily.mono]
+              }      
+        },
     },
     variants: {},
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };
+
