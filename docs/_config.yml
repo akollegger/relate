@@ -20,5 +20,16 @@ exclude:
   - "package*.json"
   - "node_modules"
 
+highlighter: rouge
+
 kramdown:
+  syntax_highlighter: rouge
   input: GFM
+
+
+plugins:
+  - rouge
+  - jekyll-feed
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-seo-tag
