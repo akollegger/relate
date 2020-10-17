@@ -1,7 +1,9 @@
 
-title: "Neo4j Relate"
+title: "Neo4j (r)elate"
 description: "A framework of tools, services and libraries for working with Neo4j."
 repository: "https://github.com/neo4j-devtools/relate"
+twitter_username: neo4j
+github_username:  neo4j
 
 permalink: pretty
 
@@ -9,7 +11,7 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "responsive"
+      layout: "page"
 
 exclude:  
   - "*.config.js"

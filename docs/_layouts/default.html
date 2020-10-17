@@ -1,12 +1,21 @@
-<!doctype html>  
-<html lang="en">  
-<head>  
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/site.css">
-    <title>{{ page.title }}</title>
-</head>  
-<body class="border-blue-400 p-8 min-h-screen min-w-full border-8">  
-    <div class="container mx-auto">
+<!DOCTYPE html>
+
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="bg-gray-100 tracking-wider tracking-normal">
+      
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
         {{ content }}
-    </div>
-</body>  
-</html>  
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

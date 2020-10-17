@@ -1,6 +1,7 @@
 ---
 permalink: /  
-title: Neo4j Relate
+title: Neo4j (r)elate
+layout: home
 ---
 
 # Neo4j Relate
