@@ -5,6 +5,8 @@ repository: "https://github.com/neo4j-devtools/relate"
 twitter_username: neo4j
 github_username:  neo4j
 
+google_analytics: UA-1192232-34
+
 permalink: pretty
 
 defaults:  
