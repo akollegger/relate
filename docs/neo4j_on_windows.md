@@ -2,9 +2,7 @@
 title: Neo4j on Windows
 ---
 
-# Neo4j on Windows
-
-## Problem
+## Problem running on Windows
 
 Neo4j doesn't have a Windows equivalent to running the DBMS as a daemon process.
 
@@ -62,8 +60,8 @@ comfortable maintaining. But could be ported to other languages.
 
 ### Implementation
 
--   [neo4j-process-win.ts]({{site.repository}}/tree/master/packages/common/src/utils/dbmss/neo4j-process-win.ts)
--   [neo4j-start.ps1]({{site.repository}}/tree/master/packages/common/neo4j-start.ps1)
+-   [neo4j-process-win.ts]({{site.github.repository_url}}/tree/master/packages/common/src/utils/dbmss/neo4j-process-win.ts)
+-   [neo4j-start.ps1]({{site.github.repository_url}}/tree/master/packages/common/neo4j-start.ps1)
 
 #### Start
 

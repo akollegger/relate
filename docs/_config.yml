@@ -1,13 +1,16 @@
 
-title: "Neo4j (r)elate"
-description: "A framework of tools, services and libraries for working with Neo4j."
-repository: "https://github.com/neo4j-devtools/relate"
+title: "neo4j (r)elate"
+description: "Neo4j Relate is a framework of tools, services and libraries for working with Neo4j."
+
 twitter_username: neo4j
 github_username:  neo4j
+repository: neo4j-devtools/relate
 
 google_analytics: UA-1192232-34
 
 permalink: pretty
+
+show_excerpts: true
 
 defaults:  
   - scope:
@@ -26,6 +29,13 @@ kramdown:
   syntax_highlighter: rouge
   input: GFM
 
+social_links:
+  twitter: neo4j
+  github: neo4j-devtools
+  stackoverflow: neo4j
+  facebook: neo4j
+  linkedin: neo4j
+  keybase: neo4j
 
 plugins:
   - rouge

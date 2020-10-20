@@ -1,8 +1,8 @@
 docs_list_title: Pages
 docs:
 
-  - title: Overview
-    url: /
+  - title: About
+    url: /about/
 
   - title: First Use Guide
     url: /first_use_guide/

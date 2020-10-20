@@ -1,7 +1,6 @@
 ---
 title: Monadic Type System
 ---
-# Monadic Type System
 
 We have our own monadic type system which is continuously under development. The aim of this system is to ensure type-safety, reduce complexity of logic and control-flows, improve legibility of code, and improve TypeScripts ability to do type-inference et al.
 

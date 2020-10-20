@@ -1,15 +1,11 @@
 ---
 layout: default
 ---
-
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-
-
+  
+<div class="container w-full mx-auto pt-8 lg:pt-16">
+  <div class="w-full mt-16 p-8 lg:mt-0 leading-normal bg-gray-800">
+    {{ content }}
+  </div>
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -18,25 +14,55 @@ layout: default
 
 
   {%- if posts.size > 0 -%}
+  <!--Posts Container-->
+  <div class="flex flex-wrap justify-between pt-12 -mx-6">
+
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+
+    <!--1/3 col per post-->
+    <div class="w-4/5 md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+      <div class="flex-1  pt-4 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+        <a href="{{ post.url | relative_url }}" class="flex flex-wrap no-underline hover:no-underline">
+          <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+            {%- for category in post.categories -%}
+              <span>{{ category | capitalize}}</span>&nbsp;
+            {%- endfor -%}
+          </p>
+          <div class="w-full font-bold text-xl text-gray-900 px-6">{{ post.title | escape }}</div>
+
+          {%- if site.show_excerpts -%}
+          <div class="text-gray-800 text-base px-6 mb-5 hidden md:block">
+            {{ post.excerpt }}
+          </div>
+          {%- endif -%}
+        </a>
+      </div>
+      <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+        <div class="flex items-center justify-between">
+          {%- if post.author -%}
+            <p class="text-gray-600">
+            {%- assign contributors = site.github.contributors | where: "login", post.author -%}
+            {%- assign contributor = contributors | first -%}
+            {%- if contributor -%}
+              <a href="{{ contributor.html_url}}">
+                <img class="w-8 h-8 rounded-full mr-4 avatar inline" data-tippy-content="{{ post.author }}" src="{{contributor.avatar_url}}" alt="Avatar image of the post author">
+              </a>
+            {%- endif -%}
+            <span>{{post.author}}</span>
+            </p>
+          {%- else -%}
+            <span>Anonymous</span>
+          {%- endif -%}
+          <!-- <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p> -->
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
 
     {% if site.paginate %}
       <div class="pager">
@@ -55,7 +81,7 @@ layout: default
         </ul>
       </div>
     {%- endif %}
-
+    </div>
   {%- endif -%}
 
 </div>

@@ -2,8 +2,6 @@
 title: First Use Guide
 ---
 
-# First use guide
-
 0. [Disclaimer](#disclaimer)
 1. [Installation](#installation)
 2. [Creating a local environment](#creating-a-local-environment)

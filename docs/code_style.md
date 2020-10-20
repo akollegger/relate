@@ -1,7 +1,6 @@
 ---
 title: Code Style
 ---
-# Code Style
 
 List of rules we should keep in mind when writing code in this repo.
 

@@ -1,12 +1,12 @@
 ---
 title: Testing
 ---
-# Testing
+
 This document contains all instructions for testing.
 
 ## Setup
 
-All tests run against the [e2e fixtures folder]({{site.repository}}/tree/master/e2e/relate%20fixtures).
+All tests run against the [e2e fixtures folder]({{site.github.repository_url}}/tree/master/e2e/relate%20fixtures).
 
 ### DBMS
 Tests are run concurrently, so never assume an exact amount of DBMSs installed at

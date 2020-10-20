@@ -1,34 +1,51 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="container w-full mx-auto px-2 pt-8 lg:pt-16 mt-16 mb-8 h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-        ~ 
-        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-      {%- endif -%}</p>
-  </header>
+  <div class="flex-none mx-auto overflow-hidden shadow-lg mb-6 p-6 px-8 lg:w-4/5">
+    <div class="flex items-center justify-between">
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+      <div>
+        <p class="w-full text-gray-600 text-xs md:text-sm">
+          {%- for category in page.categories -%}
+            <span>{{ category | capitalize}}</span>&nbsp;
+          {%- endfor -%}
+        </p>
+        <div class="w-full font-bold text-2xl text-gray-900">{{ page.title | escape }}</div>
+
+      </div>
+      <div>
+        {%- if page.author -%}
+          <p class="text-gray-600" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          {%- assign contributors = site.github.contributors | where: "login", page.author -%}
+          {%- assign contributor = contributors | first -%}
+          {%- if contributor -%}
+            <a href="{{ contributor.html_url}}">
+              <img class="w-8 h-8 rounded-full mr-4 avatar inline" data-tippy-content="{{ post.author }}" src="{{contributor.avatar_url}}" alt="Avatar image of the post author">
+            </a>
+          {%- endif -%}
+          <span>{{page.author}}</span>
+          </p>
+        {%- else -%}
+          <span>Anonymous</span>
+        {%- endif -%}
+      </div>
+    </div>
   </div>
+
+  <div class="w-full lg:w-4/5 p-8 mx-auto mt-6 lg:mt-0 text-gray-900 leading-normal bg-white border border-gray-400 border-rounded">
+    <!--Title-->
+    <!-- <div class="font-sans">
+       <h1 class="font-sans break-normal text-gray-900 pt-6 pb-2 text-xl">{{ page.title }}</h1>
+       <hr class="border-b border-gray-400">
+    </div> -->
+    <!--Page Content-->
+    <div class="prose max-w-none">
+       {{ content }}
+    </div>
+    <!--/ Page Content-->
+ </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

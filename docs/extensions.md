@@ -2,8 +2,6 @@
 title: Extensions
 ---
 
-# Extensions
-
 `@relate` can be extended by third parties using one of two main approaches:
 
 - Adding new [@nestjs](https://docs.nestjs.com/) modules to one of the main API surfaces (`WEB`, `SYSTEM`, `CLI`, `ELECTRON`)
