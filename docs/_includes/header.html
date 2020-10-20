@@ -49,11 +49,11 @@
             
             <ul class="list-reset lg:flex justify-end items-center">
                <li class="mr-3 py-2 lg:py-0">
-                  <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-2 px-4" href="/about/">Docs</a>
+                  <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-2 px-4" href="{{ "/about/" | relative_url }}">Docs</a>
                </li>
                {% for post in site.posts limit:1 %}
                   <li class="mr-3 py-2 lg:py-0">
-                     <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-2 px-4" href="{{ post.url }}">Blog</a>
+                     <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-2 px-4" href="{{ post.url | relative_url}}">Blog</a>
                   </li>
                {% endfor %}
             </ul>
