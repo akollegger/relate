@@ -255,6 +255,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  gemoji
   github-pages
   jekyll-feed (~> 0.12)
   minima (~> 2.5)
