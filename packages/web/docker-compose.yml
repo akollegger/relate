@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  relateweb:
+    image: relateweb
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      ENV: foo bar
+    ports:
+      - 3000:3000
